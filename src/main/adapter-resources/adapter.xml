@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfp:adapter name="SimpleCaptcha"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mfp="http://www.ibm.com/mfp/integration"
+	xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+	<displayName>SimpleCaptcha</displayName>
+	<description>SimpleCaptcha</description>
+
+	<securityCheckDefinition name="SimpleCaptcha" class="com.sample.SimpleCaptchaSecurityCheck">
+        <property name="maxAttempts" defaultValue="3" displayName="How many attempts are allowed"/>
+        <property name="blockedStateExpirationSec" defaultValue="10" displayName="How long before the client can try again (seconds)"/>
+        <property name="successStateExpirationSec" defaultValue="60" displayName="How long is a successful state valid for (seconds)"/>
+        <property name="attemptingStateExpirationSec" defaultValue="60" displayName="What is the max time between 2 attempts (seconds)"/>
+        <property name="maxOperator" defaultValue="10" displayName="The random generated number will be between 0 and this field"/>
+
+	</securityCheckDefinition>
+
+</mfp:adapter>
